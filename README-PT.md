@@ -2,8 +2,7 @@ Laboratório Active Directory Híbrido (On-Prem + Cloud)
 Visão Geral
 
 Este projeto consiste na construção prática de um ambiente de identidade híbrida, integrando um Active Directory local com a nuvem por meio do Microsoft Entra ID.
-
-O objetivo foi simular um cenário corporativo real, aplicando boas práticas de gerenciamento de identidade, controle de acesso e resolução de problemas - situações comuns no dia a dia da área de TI.
+O objetivo foi simular um cenário corporativo real, aplicando boas práticas de gerenciamento de identidade, controle de acesso e resolução de problemas – situações comuns no dia a dia da área de TI.
 
 Ambiente
 
@@ -52,6 +51,7 @@ Usuários sincronizados e visíveis no Microsoft Entra ID
 Autenticação em serviços cloud funcionando corretamente
 Aplicação de GPO validada na máquina cliente
 Controle de acesso aos arquivos funcionando conforme as permissões definidas
+Login na VM cliente usando o e-mail do Azure (UPN) com a senha do AD local, comprovando a integração híbrida
 Troubleshooting
 
 Durante a implementação, foram enfrentados e resolvidos alguns desafios comuns em ambientes reais:
@@ -74,6 +74,7 @@ Resumo Profissional
 
 Este projeto demonstra a implementação de um ambiente híbrido completo, integrando Active Directory local ao Microsoft Entra ID.
 Foram aplicados conceitos de controle de acesso, automação com PowerShell, gerenciamento de políticas (GPO) e resolução de problemas em um cenário próximo ao real.
+O teste de login com e-mail do Azure na VM usando a senha do AD local evidencia o funcionamento correto da identidade híbrida.
 
 Autor
 
