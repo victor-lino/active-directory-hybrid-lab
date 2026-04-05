@@ -1,82 +1,79 @@
-Active Directory Hybrid Lab (On-Prem + Cloud)
+Hybrid Active Directory Lab (On-Prem + Cloud) - Updated with Intune
 Overview
 
-This project is a hands-on lab where I built a complete hybrid identity environment, combining an on-premises Active Directory with cloud identity using Microsoft Entra ID.
-The main goal was to simulate a real corporate scenario, applying best practices for identity management, access control, and troubleshooting – challenges commonly faced in real IT environments.
-
-Portuguese version available: README-PT.md
+This project consists of building a hybrid identity environment, integrating an on-premises Active Directory with Microsoft Entra ID. The goal was to simulate a real corporate scenario, applying best practices in identity management, access control, and troubleshooting – common tasks in IT operations.
 
 Environment
 
-The lab was structured using virtual machines to replicate a real network:
+The lab was set up using virtual machines to reproduce a corporate network:
 
 Domain Controller (Windows Server Core)
 Member Server (Desktop Experience)
-Client machine (Windows 11 Pro)
-What I Implemented
+Client Machine (Windows 11 Pro)
+Implemented Features
 
-In this project, I worked on several key components of a corporate environment:
+During the project, the following resources were implemented:
 
 Active Directory Domain Services (AD DS)
-Organizational Units (Finance department structure)
+Organizational Unit structure (Finance department)
 User creation and management via PowerShell
-Security groups (RBAC – Role-Based Access Control)
-File Server with NTFS and SMB permissions
-Group Policy (GPO) for wallpaper deployment
-Hybrid identity with Azure AD Connect
-Integration with Microsoft Entra ID
-End-user validation using a Windows 11 client
+Security groups with Role-Based Access Control (RBAC)
+File Server with NTFS permissions and SMB sharing
+Group Policy (GPO) application to standardize the environment (wallpaper)
+Hybrid integration with Azure AD Connect
+Synchronization with Microsoft Entra ID
+Validation of the environment on client VM
 File Server
 
-I configured a file server with segmented access to simulate a real department structure:
+A file server was configured with departmental folder segmentation:
 
-ContasPagar (Accounts Payable)
-ContasReceber (Accounts Receivable)
+AccountsPayable
+AccountsReceivable
 
-Access was controlled using Active Directory groups, ensuring proper permission separation.
+Access control was performed using AD groups, ensuring proper separation of permissions.
 
 Hybrid Identity
 
-To extend identity to the cloud, I implemented:
+For cloud integration, the following was implemented:
 
-Azure AD Connect
-Password Hash Synchronization
-User synchronization between on-prem AD and Entra ID
+Azure AD Connect configured
+Password hash synchronization enabled
+Users synchronized between on-premises AD and Entra ID
 
-This allowed users created locally to authenticate in cloud services.
+Validation:
 
-Validation
+Users synchronized and visible in Microsoft Entra ID
+Cloud service authentication working correctly
+GPO applied successfully on the client VM
+File access controlled according to permissions
+Login on client VM using Azure email (UPN) with AD local password
+Microsoft Intune – Additional Section
 
-To ensure everything was working as expected, I tested:
+For device management and compliance, Microsoft Intune was used, allowing:
 
-User synchronization in Microsoft Entra ID
-Successful authentication in cloud services
-GPO application on the client machine
-File access restrictions based on group permissions
-Login on the client VM using the Azure email (UPN) with the on-prem AD password, confirming that the hybrid identity integration was fully functional
-Challenges & Troubleshooting
+Compliance policies and restrictions applied (USB, Control Panel)
+Update Rings management for patch control
+Application deployment (e.g., Google Chrome)
+Windows Autopilot for automatic device onboarding (optional)
+Device and sign-in log monitoring
 
-During the project, I faced and solved several real-world issues, such as:
+During implementation, common challenges were faced and resolved:
 
-DNS resolution problems
-Network configuration (NAT + Host-only in VMware)
+DNS issues
+Virtual network configuration (NAT and Host-only in VMware)
 Azure authentication errors
-Embedded browser issues during login
-
-These troubleshooting steps were a key part of the learning process.
-
+Browser-related issues during setup
 Technologies Used
 Windows Server
 Active Directory
 PowerShell
 Microsoft Entra ID
 Azure AD Connect
+Microsoft Intune
 VMware
 Professional Summary
 
-In this project, I designed and implemented a hybrid identity environment integrating on-premises Active Directory with Microsoft Entra ID.
-I applied concepts such as access control, automation with PowerShell, Group Policy management, and real-world troubleshooting.
-The successful login with the Azure email (UPN) on the client VM using the on-prem AD password demonstrates the practical functionality of the hybrid identity setup.
+This project demonstrates the implementation of a complete hybrid environment, integrating on-premises AD with Microsoft Entra ID. Concepts of access control, PowerShell automation, policy management (GPO), and troubleshooting were applied. Testing login on the VM using Azure email with the local AD password demonstrates proper hybrid identity functionality.
 
 Author
 
