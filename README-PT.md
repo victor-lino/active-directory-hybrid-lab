@@ -1,8 +1,7 @@
-Laboratório Active Directory Híbrido (On-Prem + Cloud)
+Laboratório Active Directory Híbrido (On-Prem + Cloud) - Atualizado com Intune
 Visão Geral
 
-Este projeto consiste na construção prática de um ambiente de identidade híbrida, integrando um Active Directory local com a nuvem por meio do Microsoft Entra ID.
-O objetivo foi simular um cenário corporativo real, aplicando boas práticas de gerenciamento de identidade, controle de acesso e resolução de problemas – situações comuns no dia a dia da área de TI.
+Este projeto consiste na construção prática de um ambiente de identidade híbrida, integrando um Active Directory local com a nuvem por meio do Microsoft Entra ID. O objetivo foi simular um cenário corporativo real, aplicando boas práticas de gerenciamento de identidade, controle de acesso e resolução de problemas – situações comuns no dia a dia da área de TI.
 
 Ambiente
 
@@ -41,40 +40,40 @@ Azure AD Connect configurado
 Sincronização de hash de senha habilitada
 Sincronização de usuários entre o AD local e o Entra ID
 
-Com isso, usuários criados localmente passaram a ter acesso a serviços em nuvem.
-
-Validação
-
-Foram realizados testes para garantir o funcionamento do ambiente:
+Validação:
 
 Usuários sincronizados e visíveis no Microsoft Entra ID
 Autenticação em serviços cloud funcionando corretamente
 Aplicação de GPO validada na máquina cliente
 Controle de acesso aos arquivos funcionando conforme as permissões definidas
-Login na VM cliente usando o e-mail do Azure (UPN) com a senha do AD local, comprovando a integração híbrida
-Troubleshooting
+Login na VM cliente usando o e-mail do Azure (UPN) com a senha do AD local
+Microsoft Intune (Seção Adicional)
 
-Durante a implementação, foram enfrentados e resolvidos alguns desafios comuns em ambientes reais:
+Para gerenciamento de dispositivos e políticas de compliance, foi utilizado o Microsoft Intune, permitindo:
+
+Aplicação de políticas de compliance e restrições (USB, Control Panel)
+Gerenciamento de Update Rings para controle de patches
+Deploy de aplicativos (ex: Google Chrome)
+Windows Autopilot para onboarding automático de dispositivos (opcional)
+Monitoramento de dispositivos e logs de autenticação
+
+Durante a implementação, foram enfrentados e resolvidos alguns desafios comuns:
 
 Problemas de resolução de DNS
 Configuração de rede em ambiente virtual (NAT e Host-only no VMware)
 Erros de autenticação com serviços Azure
 Problemas relacionados ao navegador durante a configuração
-
-Esses pontos foram essenciais para consolidar o aprendizado prático.
-
 Tecnologias Utilizadas
 Windows Server
 Active Directory
 PowerShell
 Microsoft Entra ID
 Azure AD Connect
+Microsoft Intune
 VMware
 Resumo Profissional
 
-Este projeto demonstra a implementação de um ambiente híbrido completo, integrando Active Directory local ao Microsoft Entra ID.
-Foram aplicados conceitos de controle de acesso, automação com PowerShell, gerenciamento de políticas (GPO) e resolução de problemas em um cenário próximo ao real.
-O teste de login com e-mail do Azure na VM usando a senha do AD local evidencia o funcionamento correto da identidade híbrida.
+Este projeto demonstra a implementação de um ambiente híbrido completo, integrando Active Directory local ao Microsoft Entra ID. Foram aplicados conceitos de controle de acesso, automação com PowerShell, gerenciamento de políticas (GPO) e resolução de problemas em um cenário próximo ao real. O teste de login com e-mail do Azure na VM usando a senha do AD local evidencia a integração correta da identidade híbrida.
 
 Autor
 
